@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://10.11.4.117:8761/eureka/
 
 server:
   tomcat:
@@ -22,7 +22,7 @@ spring:
     hikari:
       minimum-idle: 0
   redis:
-    host: localhost
+    host: 10.11.4.111
     port: 6379
     password: 123456
 
@@ -35,6 +35,8 @@ spring:
     multipart:
       max-file-size: 1000MB
       max-request-size: 1000MB
+  zipkin: 
+    base-url: http://localhost:5001
 redis:
   cache:
     expiration: 3601
@@ -78,3 +80,13 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
+
+#关闭验证
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+
+
+ 
